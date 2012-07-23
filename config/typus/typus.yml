@@ -1,0 +1,19 @@
+Choice:
+  fields:
+    default: choice, question_id, question
+    form: choice, question_id, question
+  order_by: 
+  relationships: question
+  filters: created_at, question
+  search: 
+  application: survey
+
+Question:
+  fields:
+    default: question, position
+    form: question
+  order_by: position
+  relationships: choices
+  filters: created_at
+  search: question
+  application: survey

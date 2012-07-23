@@ -1,0 +1,19 @@
+<div data-role="header" data-theme="b">
+  <h1>Survey</h1>
+</div>
+<div data-role="content">
+  <div align="center">
+	<h3><%= @question.question %></h3>
+  </div>
+  <ul data-role="listview">
+    <% @choices.each_with_index do |c, i| %>
+      <% i = i + 1 %>
+      <li data-theme="c">
+        <%= link_to "#{i}. #{c.choice}", answer_questions_path(:id => c.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div data-role="footer" data-theme="b">
+	<h4>Copyright 2011</h4>
+</div>

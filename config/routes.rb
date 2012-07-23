@@ -1,4 +1,16 @@
 Quiz::Application.routes.draw do
+  root :to => "questions#index"
+
+  resources :answers
+
+  resources :choices
+
+  resources :questions do
+    collection do
+    get :answer
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
