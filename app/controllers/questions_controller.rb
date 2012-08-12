@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+#before_filter :authenticate_user!, :except => [:some_action_without_auth]
+before_filter :authenticate_user!, :except => :show, :except => :answer
   def show
     @question = Question.find(params[:id])
     @choices = @question.choices
